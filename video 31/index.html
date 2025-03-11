@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+</head>
+<style>
+    body{
+        background-color: red;
+    }
+    @media only screen and (max-width:455px){
+        /* this will apply till 455px only  */
+        body{
+            background-color:yellow;
+            
+        } 
+        .boxes{
+            flex-direction: column;
+        }
+    }
+    @media only screen and (min-width:1200px){
+        body{
+            /* this will apply after 1200px */
+            background-color: aqua;
+        }
+        .boxes{
+            flex-direction: row;
+        }
+    }
+    @media screen and (orientation: portrait) {
+            body{
+                border: 2px solid rgb(12, 41, 233);
+            }
+        }
+    @media screen and (orientation: landscape ){
+        body{
+            border: 4px solid white;
+        }
+    }
+    .boxes{
+        display: flex;
+    }
+    .box{
+        height: 360px;
+        width: 360px;
+        border: 2px solid black;
+    }
+</style>
+<body>
+    <div>
+        Hey i am box
+    </div>
+    <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

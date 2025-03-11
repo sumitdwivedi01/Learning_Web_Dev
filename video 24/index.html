@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow & Outline in CSS</title>
+    <style>
+        .box{
+            border: 2px solid purple;
+            border-radius: 15px;
+            box-shadow: 3px 6px 11px 1px rgb(62, 3, 68);    
+        }
+        .text-element{
+            text-shadow: 4px 3px 3px rgb(233, 17, 17);
+            border: 4px solid red;
+            border-radius: 20px;
+            outline: 4px solid black ;
+            outline-offset: 2px;
+            /* outline-width: 2px; uctomize width latter */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        this is a box
+    </div>
+    <p class="text-element">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit error facere debitis natus optio accusantium.
+    </p>
+    
+</body>
+</html>

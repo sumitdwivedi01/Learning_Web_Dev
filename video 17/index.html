@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS selectors</title>
+    <style>
+        /* Element selectors :-apply to all elements*/
+        div {
+            background-color: red;
+        }
+
+        /*Class selector  */
+        .first {
+            background-color: yellow;
+        }
+
+        /*ID selector*/
+        #green {
+            color: green;
+        }
+
+        /* Child selector : only works on p which in inside div not any else */
+        div>p {
+            background: red;
+            color: brown;
+        }
+
+        /* descendant selector: apply on all descendant's no need to specifie for all */
+        div p {
+            background-color: brown;
+            color: blue;
+        }
+
+        /* Universal selectors : works on all*/
+        * {
+            margin: 0;
+            padding: 0;
+            /* background-color: burlywood; */
+        }
+
+        /* pseudo selectors  */
+        a:visited {
+            color: yellow;
+            background-color: red;
+        }
+
+        a:link {
+            color: green;
+        }
+
+        a:hover {
+            color: blueviolet;
+            background-color: aqua;
+        }
+
+        a:active {
+            color: red;
+        }
+
+        p:first-child {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        i am inside div
+        <p>
+            i am para inside div
+        </p>
+    </div>
+    <div>
+        <main>
+            <p>
+                i am para inside div's main
+            </p>
+        </main>
+    </div>
+    <div class="first">
+        i am first class div
+    </div>
+    <br>
+    <div id="green" class="first">
+        i am green id div
+    </div>
+    <a href="https://google.com">Go to Google</a>
+    <a href="https://facebook.com">Go to Facebook</a>
+
+</body>
+
+</html>

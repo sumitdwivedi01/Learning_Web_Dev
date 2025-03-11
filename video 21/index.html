@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity</title>
+</head>
+<style>
+    /* https://www.codewithharry.com/tutorial/css-specificity/ important just read important for interview point of view 
+    cascade algorithm
+    1.position:- for same specificity the order of the selector matters and the last one selectors properties will get applied
+    2.specificity-
+        :-Inline Selectors > Id Selectors > Classes and Attribute selectors pseudo classes > Element Selctors pseudo selectors  > Universal Selector
+        :-  universal-0
+            Element - 1
+            Classes or Attribute - 10
+            Id selectors - 100
+            Inline - 1,000
+            !important - 10,000
+        :- for Complex selectors jisme ek se jyada properties use ho rhi ho unke liye each term ki specificity add ho jati hai 
+            eg
+            a.red--> element + class -> 1+10 = 11;
+    3.origin
+    4.important
+    */
+    .yellow {
+        color: yellow;
+    }
+
+    .purple {
+        color: purple ;
+        /* important can change inline selector too */
+    }
+
+    h1.red {
+        color: red;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    [data-x="a"] {
+        /* attribute selector : has the same specity as the class selector*/
+        background-color: aqua;
+    }
+
+    /* element a  + class rohan  + class harryclass+ [href] attribute selector + :hover (pseudo class)
+        1          + 10            + 10             +   10                      + 10                = 41 
+    a.harryclass.rohan-class[href]:hover {
+        color: red;
+    } */
+
+    ol {
+        text-transform: capitalize;
+    }
+</style>
+
+<body>
+    <h1 style="color:red" class="yellow red purple" data-x="a">CSS Specificity</h1>
+    <ol>
+        <h3>specificity of all selectors line wise </h3>
+        <li>inline selector</li>
+        <li>ID selector</li>
+        <li>class or Attribute selector</li>
+        <li>element selector</li>
+        <li>Universal selector</li>
+    </ol>
+
+</body>
+
+</html>

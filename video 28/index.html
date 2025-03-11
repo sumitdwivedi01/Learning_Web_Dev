@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Property</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            box-sizing: border-box;
+            border: 2px solid black;
+            height: 55vh;
+            width: 50vw;
+            padding: 5px;
+            margin: 5px;
+        }
+        .box1{
+            background-color: beige;
+            position: sticky;
+            top: 10px;
+            width: 80vw;
+            margin: auto;
+            height: 10vh;
+            border-radius: 30px;
+            /* position: absolute;
+            top: 0px;
+            left: 5px; */
+
+        }
+        .box1 ul{
+           display: flex;
+           border: 2px solid red;
+           border-radius: 60px;
+        }
+        .box1 ul li{
+            list-style: none;
+            padding-right: 400px;
+            padding-left: 10px;
+        }
+        .box2{
+            background-color: aquamarine;
+            /* position: relative;
+            top: 30px;
+            left: 20px; */
+        }
+        .box3{
+            background-color: blue;
+            /* position: fixed;
+            bottom: 40px;
+            left: 8vw;
+            height: 90px; */
+            
+        }
+        .box4{
+            background-color: yellow;
+            
+        }
+        .parent{
+            /* transform , filter or prespective peoperties can also make an element appear as positioned */
+            border: 2px solid black;
+            margin: 50px;
+            padding: 40px;
+            /* transform: translate(0);exception case */
+            /* filter: invert(0); */
+            perspective: 0em;
+
+            /* position:sticky; */
+             /* width: 80vw; 
+             height: 90vh; */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+
+        <div class="box box1">
+            <ul>
+                <li>home</li>
+                <li>page</li>
+                <li>about</li>
+            </ul>
+        </div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+
+    </div>
+</body>
+</html>

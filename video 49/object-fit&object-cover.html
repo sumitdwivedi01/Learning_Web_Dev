@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Fit and Object-Cover in CSS</title>
+    <style>
+        .container{
+            border: 2px solid black;
+            width: 700px;
+            height: 700px;
+            /* background-color: azure; */
+            /* background-image: url("https://photographylife.com/wp-content/uploads/2014/06/Nikon-D810-Image-Sample-6.jpg"); */
+            background-image: url(https://images.pexels.com/photos/6682642/pexels-photo-6682642.jpeg?auto=compress&cs=tinysrgb&h=650&w=940);
+            /* background-position: center center; */
+            /* background-position: 50% 50%; */
+            /* background-repeat:no-repeat ; */
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    
+        img{
+            border: 2px solid red;
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            object-position: 10px 30px;
+            /* object-fit: fill; By default */
+            /* object-position: top right; */
+            }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <H1>Hey who are you boss?</H1>
+        </div>
+
+            <!-- <img src="https://photographylife.com/wp-content/uploads/2014/06/Nikon-D810-Image-Sample-6.jpg" alt=""> -->
+    </div>
+    
+</body>
+</html>

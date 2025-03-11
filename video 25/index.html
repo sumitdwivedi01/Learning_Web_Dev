@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Lists Using CSS</title>
+</head>
+<style>
+    /* *{
+        margin: 0;
+        padding: 0;
+    } */
+    nav ul li{
+        /* list-style: none; : used to remove dot from the from of the list item */
+        /* list-style-type: "😂"; */
+        /* used for hindi countings*/
+        /* by default marker of the list stay outside of the list item */
+        /* background-color: aqua; */
+        /*abhi ye marker ko include nhi krega*/
+        /* list-style-position: inside; */
+        /*now this will also include marker with list item and give border background color and every thing to marker*/
+        /* list-style: inside url("https://storage.googleapis.com/kolosekblog/2018/05/bullet.png"); */
+        /* list-style-image: url("https://storage.googleapis.com/kolosekblog/2018/05/bullet.png"); */
+        list-style: none;
+        padding: 20px;
+    }
+    nav ul{
+        display: flex;
+    }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Leetcode</li>
+        </ul>
+    </nav>
+</body>
+</html>

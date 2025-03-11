@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sizing Units</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* root element */
+    font-size: 12px;
+}
+.box{
+    box-sizing: border-box;
+    border: 2px solid red;
+    background-color: aqua;
+    /* width: 1960px; */
+    width: 80vw;
+    height: 10vh;
+    margin:auto;/* for center allignment for block elements not for in line*/
+    
+}
+/* span{
+    box-sizing: border-box;
+    border: 4px double darkblue;
+     width: 100vw; no effect of width for in line elements 
+}
+*/
+.container{
+    min-width: 80vw;
+    min-height: 80vh;
+    box-sizing: border-box;
+    border: solid red;
+    background-color: blueviolet;
+    width: 80vw;
+    /* height: 80vh; */
+    margin:  23px auto;
+    /* text-transform: uppercase; */
+    font-size: 18px;
+}
+.container >div {
+    box-sizing: border-box;
+    border: solid red;
+    text-transform: lowercase;
+    width: 50% ;
+    /* font-size: 2em;(18*2=36px)*/
+    font-size: 2rem;/* html{} font size -> 12px so 2 rem= 24px*/
+    /* em->inherited element ka n times */
+    /* rem->root element ka n times */
+}
+.container >div>div{
+    border: solid 2px black;
+    width: 50%;
+}
+.vmin{
+    box-sizing: border-box;
+    border: solid grey;
+    background-color: yellow;
+    color: red;
+    width: 80vmax;
+    margin: 20px auto;
+    height: auto;
+    
+}
+
+
+</style>
+<body>
+    <div class="box">
+        this is a box this is getting font from root element html of 12px 
+   </div>
+   <!-- <span class="inline">
+    this is inline span
+   </span> -->
+   <div class="container">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo rerum voluptate, animi ad cumque magnam. Quas ab sit, voluptatibus perferendis quod delectus voluptatum repellendus suscipit dicta ut molestias cum nemo libero voluptates excepturi laborum mollitia esse sapiente aut! Quae minus enim quas nisi quibusdam earum omnis deleniti eveniet. Quisquam hic id molestiae sunt pariatur tenetur!
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad harum sunt dignissimos, labore porro molestias, reiciendis animi sapiente atque fugit quos earum deserunt laboriosam facere quas! Culpa aliquid nisi voluptatem nesciunt enim? Repudiandae alias quae molestiae est sunt reiciendis, ratione aut ullam nam similique quibusdam incidunt! Quidem ipsum minima vitae distinctio voluptas ullam similique eos.
+        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex accusamus exercitationem sit voluptate labore, magnam enim doloremque ducimus? Quam, alias commodi!
+        </div>
+    </div>
+    </div>
+    <div class="vmin">
+        This is testing phase
+    </div>
+</body>
+</html>

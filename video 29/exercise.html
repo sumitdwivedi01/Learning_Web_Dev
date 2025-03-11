@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=JetBrains+Mono:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        body{
+            background-color: grey;
+            display: flex;
+            padding: 20px;
+        }
+        .mainbox{
+            background-color: white;
+            box-shadow: 2px 4px 4px black;
+            width: 460px;
+            height: 700px;
+            border: 1px solid gray;
+            border-radius: 20px;
+            margin: 10vh auto;
+            position: relative;
+        }
+        .image{
+            /* box-shadow: 4px 2px 4px grey; */
+            position: relative;
+            top: 20px;
+            left: 20px;
+            /* border: 2px solid black; */
+        }
+        .image img{
+            border-radius: 20px;
+            
+        }
+        .box{
+            box-shadow: 2px 2px 4px grey;
+            position: relative;
+            border: 1px solid grey;
+            padding: 0px 2px ;
+            border-radius: 8px;
+            margin: 10px;
+            padding-left:5px;
+            padding-right:5px;
+            top: 20px;
+            left: 30px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-weight: 500;
+            color: grey;
+        }
+        .box2{
+            position: relative;
+            left: 50px;
+        }
+        .heading{
+            position: relative;
+            top: 20px;
+            left: 20px;
+            font-size: larger;
+            font-family: "JetBrains Mono", serif;
+            text-align: left;
+        }
+        .text{
+            position: relative;
+            font-size: 20px;
+            top: 10px;
+            left: 20px;
+            overflow: hidden;
+            text-overflow: auto;
+            font-family: "Baloo 2", serif;
+            text-align: left;
+            color: grey;
+        }
+        /* .read{
+            box-shadow: 2px  4px 4px rgb(111, 111, 237);
+            position: relative;
+            left:37%;
+            /* outline: 2px solid rgb(255, 255, 255); */
+            /* background-color: rgb(188, 196, 233);
+            color: rgb(11, 99, 231);
+            font-weight: 400;
+            border-radius: 10px; 
+            top: 50px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: larger;
+            text-align: center;
+           
+        } */ 
+         .button{
+            box-shadow: 2px  4px 4px rgb(111, 111, 237);
+            position: relative;
+            left:37%;
+            /* outline: 2px solid rgb(255, 255, 255); */
+            background-color: rgb(188, 196, 233);
+            color: rgb(11, 99, 231);
+            font-weight: 400;
+            border-radius: 10px; 
+            top: 50px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: larger;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            
+         }
+         .button:hover{
+            background-color: rgb(7, 26, 109);
+            color: rgb(1, 9, 20);
+
+         }
+
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+        <div class="image">
+            <img src="image.jpg" alt="poster image" height="350" width="420">
+        </div>
+        <span class="box box1"> Nature </span>
+        <span class="box box2"> Trees </span>
+        <div class="heading">
+            <h1>Nature image</h1>
+        </div>
+        <div class="text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore earum possimus saepe nobis magnam excepturi reprehenderit rem qui!
+        </div>
+        <button class="button"> Read more </button>
+    </div>
+    
+</body>
+</html>
