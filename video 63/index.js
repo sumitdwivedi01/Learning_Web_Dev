@@ -33,5 +33,14 @@ console.log(arr);// it will show the empty at the place of arr[3] beause it do n
 
 let arr1=[1,2,3,4];
 let arr2=[5,8,6,7];
-let arr3=[11,22,33,44];
-console.log(a.concat)
+const arr3=[11,22,33,44];
+console.log(arr1.concat(arr2 , arr3)); // this will not affect the original array niether arr1 , arr2 , arr3 none
+console.log(arr3.splice(2,1))//it will remove 1 element from the 2nd index , and this also changes the original array
+console.log(arr3);//returns the spliced array
+
+console.log(arr3.slice(1));//this will return a new array which will have elements after 1st index of the array
+console.log(arr3);//the array will remain same no change
+
+console.log(arr1)
+arr1.reverse();
+console.log(arr1);
