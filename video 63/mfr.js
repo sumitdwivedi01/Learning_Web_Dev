@@ -26,9 +26,11 @@ console.log(arr.filter(greater_than_5))
 
 
 //array.reduce(function_name) reduces a function into a single value
-let arr2=[1,2,3,,4,5,6];
+let arr2=[1,2,3,4,5,6];
 const red = (a,b)=>{
     return a*b;
 }
 
 console.log(arr2.reduce(red));
+let arr6=Array.from("sumit is amazing");
+console.log(arr6);
