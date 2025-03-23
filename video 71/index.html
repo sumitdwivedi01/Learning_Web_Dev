@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container red green_color" style="
+    display: flex;
+    justify-content: center
+    ; 
+    flex-direction: column;
+    border:2px solid black;
+">
+        <div class="box" style=" width: 100px;
+        height: 100px;border: 2px solid black; justify-content: center;margin: 10px;padding: 10px;" data-created_by="sumit" data-role="Web-Developer">
+        Hey I am a box</div>
+        <div class="box" id="element" style=" width: 100px;height: 100px;border: 2px solid black;justify-content: center;margin: 10px;padding: 10px;">
+        Hey I am a box</div>
+    <script>
+        // let box1 = document.createElement("div");
+        // box1.innerHTML="I have been inserted using <b> JavaScript </b>";
+        // box1.setAttribute("class","created");
+        // document.querySelector(".container").append(box1);
+        // document.querySelector(".container").prepend(box1);
+        // document.querySelector(".container").before(box1);
+        // document.querySelector(".container").after(box1);
+        // document.querySelector(".container").replaceWith(box);
+        let cont=document.querySelector(".container");
+        cont.insertAdjacentHTML("beforebegin" , "<b> before beginning</b> ");
+        cont.insertAdjacentHTML("afterbegin" , "<b> after beginning</b> ");
+        cont.insertAdjacentHTML("afterend" , "<b> after ending </b>");
+        cont.insertAdjacentHTML("beforeend" , "<b> before end</b> ");
+        // document.querySelector(".container").className = "container bg color ";
+        //this will change the classses name intp the given one even if the original .container will get removed if not written again 
+        document.querySelector(".container").classList.add("newclass");
+        // document.querySelector(".container").classList.toggle("red_bg");
+        // document.querySelector(".container").classList.remove("red_bg");
+
+    </script>
+</body>
+
+</html>
