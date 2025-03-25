@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            margin: 5px;
+            padding: 10px;
+            width: 80%;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f4f4f4;
+            border-radius: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bookmark Manager</h2>
+        <input type="text" id="siteName" placeholder="Website Name">
+        <input type="text" id="siteURL" placeholder="Website URL">
+        <button onclick="addBookmark()">Add Bookmark</button>
+        <ul id="bookmarkList"></ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadBookmarks);
+
+        function addBookmark() {
+            let name = document.getElementById("siteName").value;
+            let url = document.getElementById("siteURL").value;
+            if (name && url) {
+                let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+                bookmarks.push({ name, url });
+                localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+                loadBookmarks();
+                document.getElementById("siteName").value = "";
+                document.getElementById("siteURL").value = "";
+            }
+        }
+
+        function loadBookmarks() {
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks")) || [];
+            let list = document.getElementById("bookmarkList");
+            list.innerHTML = "";
+            bookmarks.forEach((bookmark, index) => {
+                let li = document.createElement("li");
+                li.innerHTML = `<a href="${bookmark.url}" target="_blank">${bookmark.name}</a>
+                                <button onclick="removeBookmark(${index})">Delete</button>`;
+                list.appendChild(li);
+            });
+        }
+
+        function removeBookmark(index) {
+            let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+            bookmarks.splice(index, 1);
+            localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+            loadBookmarks();
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMark Manager</title>
+</head>
+<style>
+    .containermain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .input{
+        max-width: 80%;
+        margin: 5px;
+    }
+    .bookmarker{
+        /* border: 2px solid black; */
+    }
+    .btn{
+        margin: 5px;
+        padding: 10px;
+    }
+</style>
+<body>
+    <div class="containermain">
+        <b>Web_Site Book mark Manager</b>
+        <div class="container">
+
+            <div class="bookmarker"> <a href="https://www.google.com" target="_blank">Google</a> <button class="dltbtn">delete bookmark</button></div>
+        </div>
+        <div class="btn">
+            <button class="button">Add bookmarker</button>
+        </div>
+    </div>
+        <script src="2Question.js"></script>
+</body>
+</html>
