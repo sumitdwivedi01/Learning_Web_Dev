@@ -54,7 +54,7 @@ function cleankithcen(){
         const takeouttrashresult = await takeouttrash();
         console.log(takeouttrashresult); 
         
-        console.log(`You cleaned all the chores`);
+        console.log(`You finished all the chores`);
     }
     catch(error){
         console.log(error);
