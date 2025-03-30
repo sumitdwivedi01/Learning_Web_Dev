@@ -18,12 +18,25 @@
 
 //if the promise inside fetch is resolved then this will return a ok with a true value other wise ok will have false value
 //to catch the error we can use that like catching error with that
+fetchdata();
 
 async function fetchdata() {
     
     try {
-        const response = await fetch("https://pokeapi.co/api/v2/pokemon/typhlosion");
+        const pkemonName = document.getElementById("pokemonName").value.toLowerCase();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pkemonName}`);
+        if(!response.ok){
+            throw new Error("could not fetch resourse");
+        }
+        const data = await response.json();
+        const pokemonSprite = data.sprites.front_default;
+        const imgElement = document.getElementById("pokemonSprite");
+
+        imgElement.src=pokemonSprite;
+        imgElement.style.display="block";
+        console.log(data);
     } catch (error) {
-        
+        console.error(error);
     }
+    
 }
