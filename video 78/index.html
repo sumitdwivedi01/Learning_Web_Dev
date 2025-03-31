@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .steps{
+            color: #61cf5a;
+        }
+        body{
+            background-color: black;
+        }
+        .blink{
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: forwards 0.1s  ease-in-out 0s 10 forwards forwards ;
+        }
+    </style>
+</head>
+<body>
+     <!-- Create a hacking simulator which has green background and it shows these messages with random delay of 1 to 7 seconds 
+    
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real terminal
+    -->
+    <h1 class="blink steps">...</h1>
+    <h1 class="steps" id="step1"></h1>
+    <h2 class="steps" id="step2"></h2>
+    <h2 class="steps" id="step3"></h2>
+    <h3 class="steps" id="step4"></h3>
+    <h2 class="steps" id="step5"></h2>
+    <script src="script.js"></script>
+</body>
+</html>
