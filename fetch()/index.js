@@ -18,7 +18,7 @@
 
 //if the promise inside fetch is resolved then this will return a ok with a true value other wise ok will have false value
 //to catch the error we can use that like catching error with that
-fetchdata();
+// fetchdata();
 function getRandomPokemon() {
     const pokemonList = [
         "Pikachu", "Charmander", "Bulbasaur", "Squirtle", "Jigglypuff", 
