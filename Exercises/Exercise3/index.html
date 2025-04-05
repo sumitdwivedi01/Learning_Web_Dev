@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <style>
+        .content{
+            border: 2px solid;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .jokes{
+            border: 2px solid;
+            padding: 3px;
+            background-color: rgb(116, 239, 219);
+            font-family:sans-serif;
+        }
+        .getjoke{
+            padding: auto;
+            margin: 5px;
+            cursor: pointer;
+            background-color: rgb(160, 123, 234);
+            color: white;
+            border-radius: 3px;
+        }
+        .getjoke:hover{
+            background-color: rgb(98, 24, 244);
+            color: rgb(235, 245, 200);
+        }
+        .clearPage:hover{
+            background-color: rgb(53, 50, 50);
+            color: white;
+        }
+        .clearPage{
+            margin: 5px;
+            cursor: pointer;
+            background-color: rgb(80, 76, 76);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="joke"></div>
+        <button class="getjoke" onclick="main()">Genrate A Joke</button>
+        <button class="clearPage" onclick="clearpage()">Clear Page</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
