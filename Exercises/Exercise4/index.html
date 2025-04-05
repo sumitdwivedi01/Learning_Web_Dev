@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+    .content{
+        border: 2px solid ;
+    }
+    .clock{
+        /* border: 2px solid red; */
+        background-color: rgb(68, 121, 165);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .time{
+        font-size: 80px;
+        font-family: "Orbitron", sans-serif;
+        color: rgb(255, 0, 0);
+    }
+    .small{
+        position: relative;
+        width: 95%;
+        color: white;
+
+    }
+    .day{
+        position: relative;
+        left: 65%;
+    }
+</style>
+<body>
+    <div class="content">
+        <div class="clock" id="clock">
+            <div class="small">
+                <span class="date">Date:</span>
+                <span class="date" id="date" >Date</span>
+                <span class="month" id="month">month</span>
+                <span class="year" id="year">year</span>
+                <span class="day">Day:</span>
+                <span class="day" id="day">day</span>
+            </div>
+            <div class="time" id="time">00:00:00</div></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
