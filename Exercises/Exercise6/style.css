@@ -1,0 +1,148 @@
+  
+:root{
+
+    --background :#000430;
+    --secondaryBackground :#171c48;
+    --text :#fff;
+    --purple :#828dff;
+    --teal :#24feee;
+}
+ 
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*box sizing border box :- margin + padding ka total sum will be the box size*/
+
+ }
+ body{
+    background-color: var(--background);
+    color: var(--text);
+
+ }
+ .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 120px auto 0px auto;
+    max-width: 500px;
+ }
+ .stats-container{
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--purple);
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    width: 100%;
+ }
+ .title{
+    width: 100%;
+ }
+.circletrack{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;/*item will not shrik it's height:  width:  if needed it will remane as it is;;*/
+
+}
+.prgressbar{
+    width: 100%;
+    height: 10px;
+    background-color: var(--secondaryBackground);
+    margin-top: 20px;
+    border-radius: 5px;
+
+}
+#progress{
+    background-color: var(--teal);
+    width: 0%;
+    height: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+form{
+    margin-top: 60px;
+    width: 100%;
+   display: flex;
+   gap: 10px;
+}
+form input{
+    flex: 1;/*it's like flex-grow: 1; it will grow to fill the available space and can shrink if needed;*/
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid var(--purple);
+    background-color: var(--secondaryBackground);
+    color: var(--text);
+    outline: none;
+}
+form button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple);
+    color: var(--text);
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+    box-shadow: 0px 1px 20px 18px #171c48;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 100%;
+
+}
+li{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    list-style: none;
+    border: 2px solid var(--purple);
+    margin-top: 60px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: inline;
+    padding: 5px;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.taskItem{
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task{
+    display: flex;
+    gap: 20px;
+    padding-left: 10px;
+
+}
+.icons{
+    display: flex;
+    gap: 20px ;
+    flex-shrink: 0;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.completed p{
+    text-decoration: line-through;
+    color: var(--teal);
+}
