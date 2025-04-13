@@ -10,7 +10,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: teal;
+    background-color: rgb(50, 16, 89);
 }
 .container{
     position: relative;
@@ -22,5 +22,56 @@ body{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
 .container .password{
+    position: relative;
+    height:  50px;
+}
+.password input{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0px 45px 0px 15px;
+    border: 1px solid #aaa;
+    background-color: transparent;
 
+}
+.password img{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.password img:hover{
+    background-color: rgb(230, 250, 250);
+}
+.container .rangebox{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.rangebox input{
+    width: 100%;
+    height: 5px;
+    accent-color: #826afb;
+    transition: all 0.2s ease;
+}
+.slidernumber{
+    min-width: 30px;  
+    text-align: right;
+    font-size: 17px;
+    color: #707070;
+}
+.generate-button{
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 20px;
+    background-color: #927dfc;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.generate-button:hover{
+    background-color: #826afb;
 }
