@@ -8,7 +8,7 @@
 </head>
 <body>
     <audio src="alarmsound.wav" id="audio"  loop></audio>
-    <div class="container">
+    <div class="container" id="container">
         <div class="clock">
             <div class="top">
                 <span class="date">Date:<span id="date">date - </span>
@@ -26,7 +26,7 @@
             <span>Minutes</span>
             <input type="number" max="59" min="0"placeholder="Minutes" value="00" id="minutes">
             <span>Seconds</span>
-            <input type="number" max="59" min="0" placeholder="Seconds" value="00" id="seconds">
+            <input type="number" max="59" min="0" placeholder="Seconds"  value="00" id="seconds">
         </div>
         <div class="buttons" id="buttons">
             <div class="setAlarm">
@@ -37,9 +37,10 @@
             </div> -->
 
         </div>
-        <!-- <div class="alarm">
-            <ul>Upcoming Alarm</ul>
-        </div> -->
+            <!-- <div class="upcomingAlarm">
+                <span>Upcoming Alarm: 00:00:00</span>
+                <button id="deleteAlarm">Delete Alarm</button>
+            </div> -->
     </div>
     <script src="./script.js" ></script>
 </body>
