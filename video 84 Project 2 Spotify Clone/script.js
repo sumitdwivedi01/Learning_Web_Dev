@@ -1,10 +1,13 @@
 console.log("let's Start JavaScript");
 let currentSong = new Audio();
 let songs=[];
+let currfolder;
 
 
-async function getSongs(){
-    let a = await fetch("http://127.0.0.1:3000/video%2084%20Project%202%20Spotify%20Clone/songs/");
+async function getSongs(folder){
+    currfolder=folder;
+    songs=[];
+    let a = await fetch(`http://127.0.0.1:3000/songs/${folder}`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML=response;
@@ -12,11 +15,40 @@ async function getSongs(){
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if(element.href.endsWith(".mp3")){
-            songs.push(element.href.split("/songs/")[1]);
+            songs.push(element.href.split(`/${folder}/`)[1]);
         }
     }
-    return songs;
+    // show all the songs in the playlist
+    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
+    songUL.innerHTML=``;
+    for (const song of songs) {
+        songUL.innerHTML +=  `<li> 
+                            <div class="info">
+                                <div class="musicbtn"><img src="./images/music.svg" alt="music"> </div>
+                                <div hidden class="songSrc" >${song}</div>
+                                <div class="card_sng_name">${song.replaceAll("%20", ` `).split("-")[0]}
+                                 <div class="singr"> ${song.replaceAll("%20", ` `).split("-")[1].split(".")[0]}</div></div>
+                               
+                            </div>
+                            <div class="plybtn">
+                                <img class="invert" src="./images/smlplybtn.svg" alt="">
+                            </div> </li>`;
+    }
+    
+    //playing songs from the library
+
+    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
+        e.addEventListener("click", element=>{
+            playMusic(e.querySelector(".songSrc").innerHTML.trim());
+            play.src="./images/pause.svg"
+            console.log(decodeURIComponent(e.querySelector(".songSrc").innerHTML.split(".")[0]));
+        })
+    })
+    
+    
 }
+
+
 const changeSecstoMins =(seconds)=>{
     const mins = Math.floor(seconds/60);
     const secs = Math.floor(seconds%60);
@@ -28,7 +60,8 @@ const changeSecstoMins =(seconds)=>{
 }
 //play the current song
 const playMusic = (track) =>{
-currentSong.src=("/video%2084%20Project%202%20Spotify%20Clone/songs/"+track).trim();
+currentSong.src=(`http://127.0.0.1:3000/songs/${currfolder}/`+track).trim();
+console.log(currentSong.src);
 currentSong.play();
 document.querySelector(".songname").innerHTML =`${track.replaceAll("%20", ` `).split("-")[0]}`
 document.querySelector(".songinfo").innerHTML=`00:00 / 00:00`
@@ -54,26 +87,11 @@ const currentIndex=(src)=>{
 
 
 
-
 async function main() {
-    //get the list of all the songs
-    let songs = await getSongs();
 
-    // show all the songs in the playlist
-    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
-    for (const song of songs) {
-        songUL.innerHTML +=  `<li> 
-                            <div class="info">
-                                <div class="musicbtn"><img src="./images/music.svg" alt="music"> </div>
-                                <div hidden class="songSrc" >${song}</div>
-                                <div class="card_sng_name">${song.replaceAll("%20", ` `).split("-")[0]}
-                                 <div class="singr"> ${song.replaceAll("%20", ` `).split("-")[1].split(".")[0]}</div></div>
-                               
-                            </div>
-                            <div class="plybtn">
-                                <img class="invert" src="./images/smlplybtn.svg" alt="">
-                            </div> </li>`;
-    }
+    //get the list of all the songs
+     await getSongs("fav");
+
     
     
     // Attaching event listeners to play , next and previous ; browser generally automatically declare global variable of all the id's we made on HTML so you not need to generally define play as it was automatically declared but it's a good practice to define manually   
@@ -95,13 +113,13 @@ async function main() {
     let previous= document.getElementById("previous");
     previous.addEventListener("click", (element)=>{
         console.log(play.svg);
-        let crntindex=currentIndex(currentSong.src.split("/songs/")[1]);
+        let crntindex=currentIndex(currentSong.src.split(`/${currfolder}/`)[1]);
         if(!currentSong.src ){
                 play.src="./images/pause.svg";
             let index = songs.length-1;
             playMusic(songs[index]);
             // play.src="./images/pause.svg"
-            console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+            console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
         }
         else if(crntindex==0){
             if(currentSong.paused){
@@ -110,7 +128,7 @@ async function main() {
             }  
             let index = songs.length-1;
             playMusic(songs[index]);
-            console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+            console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
 
         }
         else{
@@ -119,18 +137,18 @@ async function main() {
                 console.log("paused");
             }  
             playMusic(songs[crntindex-1]);
-            console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+            console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
         }
     })
 
     //Attaching even listener to next button
     let next= document.getElementById("next");
     next.addEventListener("click", ()=>{
-    let crntindex=currentIndex(currentSong.src.split("/songs/")[1]);
+    let crntindex=currentIndex(currentSong.src.split(`/${currfolder}/`)[1]);
     if(!currentSong.src ){
         playMusic(songs[0]);
         play.src="./images/pause.svg"
-        console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+        console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
     }
     else if(crntindex==(songs.length-1)){
         if(currentSong.paused){
@@ -139,7 +157,7 @@ async function main() {
         }  
         
         playMusic(songs[0]);
-        console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+        console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
         }
         else{
             if(currentSong.paused){
@@ -148,21 +166,11 @@ async function main() {
             }  
             
             playMusic(songs[crntindex+1]);
-            console.log(decodeURIComponent(currentSong.src.split("/songs/")[1].split(".")[0]));
+            console.log(decodeURIComponent(currentSong.src.split(`/${currfolder}/`)[1].split(".")[0]));
         }
     })
 
 
-    //playing songs from the library
-
-    Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
-        e.addEventListener("click", element=>{
-            playMusic(e.querySelector(".songSrc").innerHTML.trim());
-            play.src="./images/pause.svg"
-            console.log(decodeURIComponent(e.querySelector(".songSrc").innerHTML.split(".")[0]));
-        })
-    })
-    
     //listen for timeupdate event this even listener updates time of any video or audio in each 250ms approx
     currentSong.addEventListener("timeupdate", () => {
         const current = changeSecstoMins(currentSong.currentTime);
@@ -221,6 +229,17 @@ async function main() {
         }
     } )
 
+    //Adding an event listener to play different music from different playlist
+Array.from(document.getElementsByClassName("card")).forEach( (e)=>{
+    e.addEventListener("click", async(item)=>{
+        console.log(`fetching songs`);
+        console.log(item.currentTarget.dataset.folder);
+        await getSongs(`${item.currentTarget.dataset.folder}`);
+    })
+})
+
+
+    
 
 }
 
