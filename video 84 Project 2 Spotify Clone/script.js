@@ -84,7 +84,24 @@ const currentIndex=(src)=>{
         }
     }
 }
+//function for display album
+async function displayAlbums() {
+    let a = await fetch(`http://127.0.0.1:3000/songs`);
+    let response = await a.text();
+    let div = document.createElement("div");
+    div.innerHTML=response;
+    let anchors = div.getElementsByTagName("a");
+    console.log(anchors);
+    Array.from(anchors).forEach((e)=>{
+        if (e.href.includes("/songs")){
+            console.log(e.href);
+        }
+        
+    })
 
+    
+    
+}
 
 
 async function main() {
@@ -107,6 +124,8 @@ async function main() {
         play.src="./images/play.svg";
     }
     })
+
+    //Displaying all the albums on the page
 
 
     //Attaching event listener to previous button
@@ -238,7 +257,7 @@ Array.from(document.getElementsByClassName("card")).forEach( (e)=>{
     })
 })
 
-
+    displayAlbums();
     
 
 }
