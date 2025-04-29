@@ -7,8 +7,8 @@
     <title>Spotify Clone</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
-<link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" href="./utility.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/utility.css">
 
 <body>
     <div class="container flex bg-black">
@@ -83,46 +83,7 @@
             <div class="spotifyPlaylists ">
                 <h1 class="p-1">Spotify Playlists</h1>
                 <div class="cardContainer flex">
-                    <div data-folder="ncs" class="card flex">
-                        <div class="cover">
-                            <img src="./images/cover.jpg" alt="">
-                            <div class="greenbutton">
-                                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="32" cy="32" r="32" fill="#1FDF64" />
-                                    <polygon points="26,20 26,44 46,32" fill="black" />
-                                </svg>
-                            </div>
-
-                        </div>
-                        <div class="song_name">
-                            <h3>Song Name</h3>
-                        </div>
-                        <div class="singer_name">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsa blanditiis hic quas
-                                nostrum optio expedita repudiandae ut porro delectus illo fugiat, voluptatem maiores.
-                                Exercitationem est quos cumque ipsa corrupti.</p>
-                        </div>
-                    </div>
-                    <div data-folder="fav" class="card flex">
-                        <div class="cover">
-                            <img src="./images/cover.jpg" alt="">
-                            <div class="greenbutton">
-                                <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="32" cy="32" r="32" fill="#1FDF64" />
-                                    <polygon points="26,20 26,44 46,32" fill="black" />
-                                </svg>
-                            </div>
-
-                        </div>
-                        <div class="song_name">
-                            <h3>Song Name</h3>
-                        </div>
-                        <div class="singer_name">
-                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsa blanditiis hic quas
-                                nostrum optio expedita repudiandae ut porro delectus illo fugiat, voluptatem maiores.
-                                Exercitationem est quos cumque ipsa corrupti.</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="playbarmain">
@@ -137,7 +98,7 @@
                     <div class="datainfo">
                         <div class="volume">
                             <img class="invert"src="./images/volume.svg" alt="" id="volumeimg">
-                            <input type="range" name="volumerange" id="volumebar" value="10">
+                            <input type="range" name="volumerange" id="volumebar" value="50">
                         </div>
                         <div class="songinfo"> 
                         </div>
@@ -149,7 +110,7 @@
             </div>
         </div>
         
-        <script src="./script.js"></script>
+        <script src="./js/script.js"></script>
 </body>
 
 </html>
